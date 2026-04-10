@@ -1,0 +1,54 @@
+{
+    "projects": [
+        {
+            "id": "5ef9c5d5-8ccf-4973-b326-645801cc0777",
+            "name": "Test_project",
+            "stages": [
+                "Por empastar",
+                "SMD",
+                "TH",
+                "Sin QC",
+                "Completadas"
+            ]
+        },
+        {
+            "id": "a037603f-fa2c-4c5f-ab04-77fbb7355954",
+            "name": "Aqweqw",
+            "stages": [
+                "Queue",
+                "Processing",
+                "Completed"
+            ]
+        }
+    ],
+    "batches": [
+        {
+            "id": "13fe260d-3322-48c8-a440-c49252bc2857",
+            "name": "TEst",
+            "quantity": 25,
+            "stage": "Por empastar",
+            "project_id": "5ef9c5d5-8ccf-4973-b326-645801cc0777"
+        },
+        {
+            "id": "1840bb72-0398-4033-8028-3315c1142db2",
+            "name": "Basd",
+            "quantity": 65,
+            "stage": "Sin QC",
+            "project_id": "5ef9c5d5-8ccf-4973-b326-645801cc0777"
+        },
+        {
+            "id": "2ffe9f09-fb26-4723-a567-1a9f4a2c4ab7",
+            "name": "Aasd",
+            "quantity": 12,
+            "stage": "Queue",
+            "project_id": "a037603f-fa2c-4c5f-ab04-77fbb7355954"
+        },
+        {
+            "id": "e0a5163a-da0b-4926-866a-4a9fc28276f7",
+            "name": "sdgsdg",
+            "quantity": 42,
+            "stage": "Completed",
+            "project_id": "a037603f-fa2c-4c5f-ab04-77fbb7355954"
+        }
+    ]
+}

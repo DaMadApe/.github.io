@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Remote Dashboard</title>
+    <style>
+        body { font-family: sans-serif; background: #fff; padding: 40px; }
+        .dashboard { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+        .stat-card { padding: 20px; background: #f8f9fa; border: 1px solid #dee2e6; border-radius: 8px; text-align: center; }
+        .stat-card h2 { margin: 0; font-size: 2.5em; color: #007bff; }
+    </style>
+</head>
+<body>
+    <h1 id="page-title">Loading Project Data...</h1>
+    
+    <div class="dashboard">
+        <div class="stat-card">
+            <h3>Units in Queue</h3>
+            <h2 id="qty-queue">0</h2>
+        </div>
+        <div class="stat-card">
+            <h3>Units Processing</h3>
+            <h2 id="qty-processing">0</h2>
+        </div>
+        <div class="stat-card">
+            <h3>Units Completed</h3>
+            <h2 id="qty-completed">0</h2>
+        </div>
+    </div>
+
+    <script>
+        // Use the raw GitHub URL for your db.json
+        const JSON_URL = 'https://raw.githubusercontent.com/DaMadApe/.github.io/main/db.json';
+        
+        // Read the URL parameter (e.g., ?project=Alpha)
+        const urlParams = new URLSearchParams(window.location.search);
+        const filterProjectName = urlParams.get('project');
+
+        async function fetchAndRenderData() {
+            try {
+                const response = await fetch(JSON_URL);
+                const data = await response.json();
+                
+                let targetProjectId = null;
+                
+                // If a project is specified in the URL, find its ID
+                if (filterProjectName) {
+                    const proj = data.projects.find(p => p.name === filterProjectName);
+                    if (proj) {
+                        targetProjectId = proj.id;
+                        document.getElementById('page-title').innerText = `${proj.name} Dashboard`;
+                    } else {
+                        document.getElementById('page-title').innerText = "Project Not Found";
+                        return;
+                    }
+                } else {
+                    document.getElementById('page-title').innerText = "Global Dashboard";
+                }
+
+                // Filter batches based on project
+                const relevantBatches = targetProjectId 
+                    ? data.batches.filter(b => b.project_id === targetProjectId)
+                    : data.batches;
+
+                // Calculate Totals
+                let queue = 0, processing = 0, completed = 0;
+                
+                relevantBatches.forEach(b => {
+                    if (b.stage === 'Queue') queue += b.quantity;
+                    if (b.stage === 'Processing') processing += b.quantity;
+                    if (b.stage === 'Completed') completed += b.quantity;
+                });
+
+                // Update UI
+                document.getElementById('qty-queue').innerText = queue;
+                document.getElementById('qty-processing').innerText = processing;
+                document.getElementById('qty-completed').innerText = completed;
+
+            } catch (error) {
+                document.getElementById('page-title').innerText = "Error Loading Data";
+                console.error(error);
+            }
+        }
+
+        fetchAndRenderData();
+    </script>
+</body>
+</html>
