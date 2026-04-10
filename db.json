@@ -19,6 +19,15 @@
                 "Processing",
                 "Completed"
             ]
+        },
+        {
+            "id": "d8128153-65d1-4380-befe-5c77dd9fc0d3",
+            "name": "Another",
+            "stages": [
+                "Queue",
+                "Processing",
+                "Completed"
+            ]
         }
     ],
     "batches": [
@@ -49,6 +58,20 @@
             "quantity": 42,
             "stage": "Completed",
             "project_id": "a037603f-fa2c-4c5f-ab04-77fbb7355954"
+        },
+        {
+            "id": "7d53146e-fa27-45ad-9483-73c2d9787b05",
+            "name": "Vacas",
+            "quantity": 40,
+            "stage": "Queue",
+            "project_id": "d8128153-65d1-4380-befe-5c77dd9fc0d3"
+        },
+        {
+            "id": "f05d11a8-b3c8-4f13-bbe1-22a1d80bc300",
+            "name": "Vacas (Split)",
+            "quantity": 40,
+            "stage": "Processing",
+            "project_id": "d8128153-65d1-4380-befe-5c77dd9fc0d3"
         }
     ]
 }
