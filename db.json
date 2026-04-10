@@ -1,28 +1,19 @@
 {
     "projects": [
         {
-            "id": "5ef9c5d5-8ccf-4973-b326-645801cc0777",
-            "name": "Test_project",
+            "id": "8125a492-4ba0-4457-b2b6-895530243c85",
+            "name": "Fashident",
             "stages": [
                 "Por empastar",
-                "SMD",
-                "TH",
-                "Sin QC",
+                "Pre SMD",
+                "Pre TH",
+                "Pre QC",
                 "Completadas"
             ]
         },
         {
-            "id": "a037603f-fa2c-4c5f-ab04-77fbb7355954",
-            "name": "Aqweqw",
-            "stages": [
-                "Queue",
-                "Processing",
-                "Completed"
-            ]
-        },
-        {
-            "id": "d8128153-65d1-4380-befe-5c77dd9fc0d3",
-            "name": "Another",
+            "id": "92c5c259-b3de-4404-8518-afb2082f5f76",
+            "name": "Yazaki",
             "stages": [
                 "Queue",
                 "Processing",
@@ -32,46 +23,32 @@
     ],
     "batches": [
         {
-            "id": "13fe260d-3322-48c8-a440-c49252bc2857",
-            "name": "TEst",
-            "quantity": 25,
+            "id": "dd72ef37-6d69-4d1d-9c43-4556955a6c9e",
+            "name": "Tanda1",
+            "quantity": 20,
             "stage": "Por empastar",
-            "project_id": "5ef9c5d5-8ccf-4973-b326-645801cc0777"
+            "project_id": "8125a492-4ba0-4457-b2b6-895530243c85"
         },
         {
-            "id": "1840bb72-0398-4033-8028-3315c1142db2",
-            "name": "Basd",
-            "quantity": 65,
-            "stage": "Sin QC",
-            "project_id": "5ef9c5d5-8ccf-4973-b326-645801cc0777"
+            "id": "21681975-4437-4f16-9b0f-0dcdc0599a4e",
+            "name": "Tanda2",
+            "quantity": 30,
+            "stage": "Completadas",
+            "project_id": "8125a492-4ba0-4457-b2b6-895530243c85"
         },
         {
-            "id": "2ffe9f09-fb26-4723-a567-1a9f4a2c4ab7",
-            "name": "Aasd",
-            "quantity": 12,
+            "id": "1ee0d1e5-761a-459a-b82b-322c6301995c",
+            "name": "Test",
+            "quantity": 30,
             "stage": "Queue",
-            "project_id": "a037603f-fa2c-4c5f-ab04-77fbb7355954"
+            "project_id": "92c5c259-b3de-4404-8518-afb2082f5f76"
         },
         {
-            "id": "e0a5163a-da0b-4926-866a-4a9fc28276f7",
-            "name": "sdgsdg",
-            "quantity": 42,
+            "id": "cbf09d80-6f69-4914-9ac1-e243e7c4652d",
+            "name": "Test (Split)",
+            "quantity": 20,
             "stage": "Completed",
-            "project_id": "a037603f-fa2c-4c5f-ab04-77fbb7355954"
-        },
-        {
-            "id": "7d53146e-fa27-45ad-9483-73c2d9787b05",
-            "name": "Vacas",
-            "quantity": 40,
-            "stage": "Queue",
-            "project_id": "d8128153-65d1-4380-befe-5c77dd9fc0d3"
-        },
-        {
-            "id": "f05d11a8-b3c8-4f13-bbe1-22a1d80bc300",
-            "name": "Vacas (Split)",
-            "quantity": 40,
-            "stage": "Processing",
-            "project_id": "d8128153-65d1-4380-befe-5c77dd9fc0d3"
+            "project_id": "92c5c259-b3de-4404-8518-afb2082f5f76"
         }
     ]
 }
